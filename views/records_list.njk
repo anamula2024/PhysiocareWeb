@@ -1,0 +1,42 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Expedientes | Listado{% endblock %}
+
+{% block contenido %}
+
+<h1>Listado de Expedientes</h1>
+
+{% include 'record_patientSurname.njk' %}
+
+<table width= "100%">
+    
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+    </tr>
+
+     {% for record in records %}
+    <tr>
+        <td>{{ record.patient.name }}</td> 
+        <td>{{ record.patient.surname}}</td> 
+        <td>
+            
+            <a class= "btn btn-info" href="/records/{{ record.id }}">View Details</a>
+            <a class= "btn btn-success" href="/patients/newRecord/{{ record.id }}">Add Appointment</a>
+
+             <form action="/records/{{ record.id }}/borrar" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger">
+                    Borrar
+                </button>
+            </form>
+
+        </td>   
+    </tr>   
+    {% endfor %} 
+    
+ </table>
+
+    {% endblock %}
+   

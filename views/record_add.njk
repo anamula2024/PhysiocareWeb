@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Expediente | Nuevo{% endblock %}
+
+{% block contenido %}
+
+
+    <h1>Nuevo expediente</h1>
+
+    <form action="/records" method="post">
+        <div class="form-group">
+            <label>Expediente médico:
+                <input type="text" class="form-control" name="medicalRecord" 
+                placeholder="Expediente médico">
+            </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+            Enviar
+        </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Pacientes | Detalles{% endblock %}
+
+{% block contenido %}
+
+<h1> Detalle Expediente</h1>
+<div>
+    <h2>Datos Paciente</h2>
+        <p><strong>Nombre: </strong>{{ records.patient.name }}</p>
+        <p><strong>Apellido: </strong>{{records.patient.surname }}</p>
+        <p><strong>Fecha de nacimiento: </strong>{{ records.patient.birthDate }}</p>
+        <p><strong>Dirección: </strong>{{ records.patient.address }}</p>
+        <p><strong>Número de SS: </strong>{{ records.patient.insuranceNumber }}</p>
+
+    <h2>Expediente Médico</H2>   
+    {{records.medicalRecord}} 
+
+    <h2>Resumen de citas</h2>  
+
+    {% for appointment in records.appointments %}
+
+    <p><strong>Fecha: </strong> {{appointment.date}}</p>
+    <p><strong>Fisioterapeuta: </strong> {{appointment.physio.name}}</p>
+    <p><strong>Diagnóstico: </strong> {{appointment.diagnosis}}</p>
+    <p><strong>Tratamiento: </strong> {{appointment.treatment}}</p>
+    <p><strong>Observaciones: </strong> {{appointment.observations}}</p>
+
+    {% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}

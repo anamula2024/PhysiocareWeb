@@ -1,0 +1,41 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Fisioterapeutas | Listado{% endblock %}
+
+{% block contenido %}
+
+<h1>Listado de fisioterapeutas</h1>
+
+
+
+<table width= "100%">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Especialidad</th>
+        <th>Acciones</th>
+    </tr>
+
+     {% for physio in physios %}
+    <tr>
+        <td>{{ physio.name }}</td> 
+        <td>{{ physio.surname }}</td> 
+        <td>{{ physio.specialty }}</td> 
+        <td>
+            <a href="/physios/{{ physio.id }}/edit"> Editar</a>
+            <a href="/physios/{{ physio.id }}">Detalles</a>
+            <form action="/physios/{{ physio.id }}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger">
+                    Borrar
+                </button>
+            </form>
+        </td>   
+    </tr>   
+    {% endfor %}  
+    </table>
+
+    {% include 'physio_specialty.njk' %}
+
+    {% endblock %}
+   

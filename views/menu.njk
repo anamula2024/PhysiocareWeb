@@ -1,0 +1,23 @@
+<nav class>
+  <a class="navbar-brand" href="/">PhysioCare</a>
+  <div class="alert alert-secondary">
+    <a class="btn btn-dark" href="/auth/login">Login</a>
+    &nbsp;&nbsp;
+    <a class="btn btn-dark" href="/patients/new">Nuevo paciente</a>
+    &nbsp;&nbsp;
+    <a class="btn btn-dark" href="/physios/new">Nuevo Fisioterapeuta</a>
+     &nbsp;&nbsp;
+    <a class="btn btn-dark" href="/records/new">Nuevo expediente médico</a>
+     &nbsp;&nbsp;
+    <a class="btn btn-dark" href="/auth/logout">Logout</a>
+</div>
+
+<div class="search-container">
+  <p>{% include 'patient_surname.njk' %}</p><p>{% include 'physio_specialty.njk' %}</p><p>{% include 'record_patientSurname.njk' %}</p>
+   
+</div>
+
+
+   
+
+</nav>

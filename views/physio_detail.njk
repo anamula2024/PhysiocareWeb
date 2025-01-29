@@ -1,0 +1,18 @@
+{% extends "base.njk" %}
+{% block titulo %}Fisioterapeuta | Detalles{% endblock %}
+
+{% block contenido %}
+
+<h1>Detalles Fisioterapeuta</h1>
+<div>
+    <p><strong>Nombre: </strong>{{ physio.name }}</p>
+    <p><strong>Apellido: </strong>{{ physio.surname }}</p>
+    <p><strong>Especialidad: </strong>{{ physio.specialty }}</p>
+    <p><strong>Nº de Licencia: </strong>{{ physio.licenseNumber }}</p>
+    <p><strong>Imagen:</strong></p>
+     <img src="/uploads/{{ physio.image }}" alt="Imagen del fisioterapeuta" style="max-width: 300px; height: auto;">
+</div>
+
+<a href="/physios/{{ physio.id }}/edit"> Editar</a>
+
+{% endblock %}

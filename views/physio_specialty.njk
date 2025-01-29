@@ -1,0 +1,14 @@
+
+{% block contenido %}
+
+<h3>Buscador de fisioterapeutas</h3>
+
+<form action="/physios/find" method="GET">
+  <label for="specialty">Especialidad</label>
+  <input type="text" id="specialty" name="specialty">
+  <button type="submit">Buscar</button>
+</form>
+
+
+    
+  {% endblock %}

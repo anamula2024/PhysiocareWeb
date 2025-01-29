@@ -1,0 +1,55 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Pacientes | Listado{% endblock %}
+
+{% block contenido %}
+
+<h1>Listado de pacientes</h1>
+
+
+<table width= "100%">
+    
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+    </tr>
+    
+     {% for patient in patients %}
+    <tr>
+        <td>{{ patient.name }}</td> 
+        <td>{{ patient.surname }}</td> 
+        <td>
+            <a href="/patients/{{ patient.id }}">Detalles</a>
+            <a href="/patients/{{ patient.id }}/edit"> Editar</a>
+            <a href="/patients/{{ patient.id }}/new">Nuevo expediente</a> 
+            
+            <form action="/patients/{{ patient.id }}/borrar" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger">
+                    Borrar
+                </button>
+            </form>
+
+        </td>   
+        
+    </tr>   
+    {% endfor %}  
+    </table>
+
+    {% include 'patient_surname.njk' %}
+   
+    
+  {% endblock %}
+   
+
+
+
+    
+
+        
+
+            
+           
+            
+        

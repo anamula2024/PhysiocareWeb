@@ -1,0 +1,45 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Paciente | Modificar{% endblock %}
+
+{% block contenido %}
+
+    <h1>Modificar datos de paciente</h1>
+
+    <form action="/patients/{{patient.id}}" method="post" enctype="multipart/form-data">
+    
+        <div class="form-group">
+            <label>Nombre: </label>
+                <input type="text" class="form-control" name="name" value = "{{patient.name}}">
+        </div>
+        <div class="form-group">
+            <label>Apellido:</label>
+                <input type="text" class="form-control" name="surname" value = "{{patient.surname}}">
+         </div>
+        <div class="form-group">
+            <label>Fecha de nacimiento: </label>
+                <input type="Date" class="form-control" name="birthDate"  value = "{{patient.birthDate}}">
+        </div>
+        <div class="form-group">
+            <label>Dirección:  </label>
+                <input type="text" class="form-control" name="address"
+                value = "{{patient.address}}">
+          
+        </div>
+        <div class="form-group">
+            <label>Número de la seguridad social: </label>
+                <input type="text" class="form-control" name="insuranceNumber"
+                value = "{{patient.insuranceNumber}}">
+           
+        </div>
+        <div class="form-group">
+            <label>Imagen: </label>
+                <input type="File" class="form-control" name="image"
+                placeholder="imagen">
+           
+        </div>
+        
+        <button type="submit" class="btn btn-primary" >Enviar</button>
+    </form>
+
+{% endblock %}

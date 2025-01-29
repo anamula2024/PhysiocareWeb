@@ -1,0 +1,15 @@
+{% block contenido %}
+
+<h3>Buscador de expedientes médicos</h3>
+
+<form action="/records/find" method="GET">
+  <label for="surname">Apellido</label>
+  <input type="text" id="surname" name="surname">
+  <button type="submit">Buscar</button>
+</form>
+
+
+    
+  {% endblock %}
+   
+

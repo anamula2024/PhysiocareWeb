@@ -1,0 +1,47 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Fisioterapeuta | Modificar{% endblock %}
+
+{% block contenido %}
+
+    <h1>Modificar datos del fisioterapeuta</h1>
+
+    <form action="/physios/{{ physio.id }}" method="post" enctype="multipart/form-data">
+    
+        <div class="form-group">
+            <label>Nombre:</label>
+                <input type="text" class="form-control" name="name" 
+                value = "{{ physio.name }}">
+            
+        </div>
+        <div class="form-group">
+            <label>Apellido:</label>
+                <input type="text" class="form-control" name="surname"
+                value = "{{physio.surname}}">
+            
+        </div>
+        <div class="form-group">
+            <label>Especialidad:</label>
+                <input type="text" class="form-control" name="specialty"
+                value = "{{physio.specialty}}">
+            </label>
+        </div>
+        <div class="form-group">
+            <label>Número de licencia:</label>
+                <input type="text" class="form-control" name="licenseNumber"
+                value = "{{physio.licenseNumber}}">
+            
+        </div>
+        <div class="form-group">
+            <label>Imagen:</label>
+                <input type="File" class="form-control" name="image"
+                placeholder="imagen">
+       
+        </div>
+        
+        <button type="submit" class="btn btn-primary" >
+            Enviar
+        </button>
+    </form>
+
+{% endblock %}
