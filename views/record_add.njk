@@ -9,15 +9,18 @@
 
     <form action="/records" method="post">
         <div class="form-group">
-            <label>Expediente médico:
+            <label>Expediente médico:</label>
                 <input type="text" class="form-control" name="medicalRecord" 
                 placeholder="Expediente médico">
-            </label>
+            
         </div>
+         <div class="form-group">
+            <label>Citas:</label>
+            <textarea class="form-control" name="appointments" placeholder="Resumen de citas" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear Expediente</button>
         
-        <button type="submit" class="btn btn-primary">
-            Enviar
-        </button>
     </form>
 
 {% endblock %}
